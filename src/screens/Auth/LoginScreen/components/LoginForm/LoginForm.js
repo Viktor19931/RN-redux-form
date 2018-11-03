@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
 import {ErrorContainer, FormControl, TextInput} from "./Loginform.styles";
-import {Button, Text} from "../../../../../styles/index";
+import {Text} from "../../../../../styles/index";
 import {FormContainer} from "../../Login.style";
 import validate from "../../../../../utility/form/validation";
 import When from "../../../../../components/When/When";
 import {Row} from "../../../../../components/Grid/Row";
+import {Button} from "../Button/Button";
 
 const renderField = ({
                          label,

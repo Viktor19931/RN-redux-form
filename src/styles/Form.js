@@ -1,7 +1,6 @@
 import React from "react";
 import styled, {css} from 'styled-components/native'
 import {h1FontSize, h2FontSize, h3FontSize, h4FontSize} from './index'
-import {TouchableOpacity} from "react-native";
 
 export const Input = styled.TextInput`
   padding-vertical: 5px;
@@ -22,30 +21,6 @@ export const Input = styled.TextInput`
 export const Control = styled.View`
   margin-bottom: 24px;
 `;
-
-
-const ButtonWrapper = styled.View`
-  padding-vertical: 20px;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 100px;
-  background-color: ${props => props.bg}
-  opacity: ${props => props.disabled ? 0.5 : 1}
-`;
-
-const ButtonText = styled.Text`
-  color: white;
-`;
-
-export const Button = ({title, onPress, disabled, ...rest}) => (
-    <TouchableOpacity
-        disabled
-        onPress={onPress}>
-        <ButtonWrapper disabled {...rest}>
-            <ButtonText>{title}</ButtonText>
-        </ButtonWrapper>
-    </TouchableOpacity>
-);
 
 export const Seperator = styled.View`
   height: 1px;
