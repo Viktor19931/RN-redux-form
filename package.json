@@ -10,6 +10,7 @@
     "android": "react-native run-android"
   },
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.4",
     "react-native-navigation": "^1.1.492",
@@ -18,7 +19,6 @@
     "redux-form": "^7.4.2",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.0.3",
-    "validation": "^0.0.1"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
 import {LoginWrapper, Title} from "./Login.style";
 import LoginForm from "./components/LoginForm/LoginForm";
 import {FooterContainer} from "./components/LoginForm/Loginform.styles";
@@ -40,4 +41,11 @@ class LoginScreen extends Component {
     }
 }
 
-export default LoginScreen;
+const mapStateToProps = state => {
+   // console.log(state);
+   return {
+       form: state.form,
+   }
+}
+
+export default connect(mapStateToProps, null)(LoginScreen);

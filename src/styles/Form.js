@@ -30,15 +30,18 @@ const ButtonWrapper = styled.View`
   align-items: center;
   border-radius: 100px;
   background-color: ${props => props.bg}
+  opacity: ${props => props.disabled ? 0.5 : 1}
 `;
 
 const ButtonText = styled.Text`
   color: white;
 `;
 
-export const Button = ({title, onPress, ...rest}) => (
-    <TouchableOpacity onPress={onPress}>
-        <ButtonWrapper {...rest}>
+export const Button = ({title, onPress, disabled, ...rest}) => (
+    <TouchableOpacity
+        disabled
+        onPress={onPress}>
+        <ButtonWrapper disabled {...rest}>
             <ButtonText>{title}</ButtonText>
         </ButtonWrapper>
     </TouchableOpacity>
