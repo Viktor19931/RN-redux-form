@@ -18,7 +18,7 @@ const counterReducers = (state = initialState, action) => {
             };
 
         default:
-            return state; //state does not change
+            return state;
     }
 }
 

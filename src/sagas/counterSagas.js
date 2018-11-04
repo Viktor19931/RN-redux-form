@@ -18,7 +18,5 @@ function* decrement() {
 }
 
 export function* watchDecrement() {
-    //yield put({ type: INCREMENT, step: step });
-    console.log(`watchDecrement saga`);
     yield takeEvery(DECREMENT, decrement);
 }

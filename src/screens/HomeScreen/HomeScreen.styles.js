@@ -4,7 +4,7 @@ import { Text } from '../../styles/Text'
 
 export const CounterText = styled(Text)`
     font-weight: bold;
-    color: darkgreen;
+    color: ${props => props.counter < 0 ? 'red' : 'darkgreen'};
     text-align: center;
 `
 

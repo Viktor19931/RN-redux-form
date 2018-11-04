@@ -10,7 +10,6 @@ export class Button extends React.Component {
 
     render() {
         const {title, onPress, disabled, showIndicator, asyncValidation, ...rest} = this.props
-        console.log(`async = ${asyncValidation}`);
         return (
             <TouchableOpacity
                 disabled={disabled}

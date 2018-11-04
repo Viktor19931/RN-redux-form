@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Container} from "../../styles";
 import {decreaseCounter, increaseCounter} from "../../actions";
 import {connect} from "react-redux";
-import {View, Text} from "react-native";
+import {View} from "react-native";
 import {ButtonsWrapper, CounterBtn, CounterText} from "./HomeScreen.styles";
 
 class HomeScreen extends Component {
@@ -10,7 +10,9 @@ class HomeScreen extends Component {
         return (
             <Container background="#eee">
                 <View style={{padding: 20}}>
-                    <CounterText h3>{this.props.counter}</CounterText>
+                    <CounterText h3 counter={this.props.counter}>
+                        {this.props.counter}
+                    </CounterText>
                 </View>
                 <ButtonsWrapper>
                     <CounterBtn
@@ -31,7 +33,6 @@ class HomeScreen extends Component {
 }
 
 mapStateToProps = state => {
-    console.log(state);
    return {
        counter: state.counter.value
    }
