@@ -1,7 +1,20 @@
-const isEmail = val => {
-    const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-    return pattern.test(val);
-};
+const emailPattert = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+
+const minValue = min => value =>
+    value && value < min ? `Must be at least ${min}` : undefined;
+
+export const minLength = min => value =>
+    value && value.length < min ? `Must be at least ${min} characters` : undefined;
+
+export const required = value => value ? undefined : 'Required';
+
+export const minLength6 = minLength(6)
+
+export const isValidEmail = value =>
+    value && !emailPattert.test(value) ? 'Invalid email address' : undefined;
+
+export const isYahooMail = value =>
+    value && /.+@yahoo\.com/.test(value) ?'Really? You still use yahoo mail ?' : undefined;
 
 const validate = values => {
     const errors = {}

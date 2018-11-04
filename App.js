@@ -6,6 +6,7 @@ import ForgotPasswordScreen from './src/screens/Auth/ForgotPassswordScreen/Forgo
 import RegistrationScreen from './src/screens/Auth/RegistrationScreen/RegistrationScreen'
 
 import configureStore from './src/store/configureStore';
+import HomeScreen from "./src/screens/HomeScreen/HomeScreen";
 
 const store = configureStore();
 
@@ -28,6 +29,13 @@ Navigation.registerComponent(
 Navigation.registerComponent(
     "App.ForgotPasswordScreen",
     () => ForgotPasswordScreen,
+    store,
+    Provider
+);
+
+Navigation.registerComponent(
+    "App.HomeScreen",
+    () => HomeScreen,
     store,
     Provider
 );

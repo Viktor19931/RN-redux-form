@@ -8,7 +8,7 @@ export const FormControl =  styled(Control)`
 `
 
 export const TextInput = styled(Input)`
-    border: 1px solid ${props => props.error ? 'red' : 'steelblue'};
+    border: 1px solid ${props => props.error ? 'red' : props.warning ? 'orange' : 'steelblue'};
     height: 37px;
     flex: 1;
     padding: 5px;
@@ -16,6 +16,11 @@ export const TextInput = styled(Input)`
 
 export const ErrorContainer = styled.View`
     height: 20px;
+`
+
+export const ErrorRow = styled.Text`
+    text-align: center;
+    color: red;
 `
 
 export const FooterContainer = styled.View`

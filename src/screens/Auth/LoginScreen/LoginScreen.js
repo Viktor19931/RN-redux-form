@@ -7,25 +7,32 @@ import FooterButton from "./components/FooterButton/FooterButton";
 
 class LoginScreen extends Component {
 
-    navigateToForgotPassword = () => this.props.navigator.push({
-        screen: 'App.ForgotPasswordScreen',
-        title: 'Forgot Password',
-        animationType: 'slide-horizontal',
-    })
+    navigateToForgotPassword = () =>
+        this.props.navigator.push({
+            screen: 'App.ForgotPasswordScreen',
+            title: 'Forgot Password',
+            animationType: 'slide-horizontal',
+        })
 
-    navigateToRegistration = () => this.props.navigator.push({
-        screen: 'App.RegistrationScreen',
-        title: 'Registration',
-        animationType: 'slide-horizontal',
-    })
+    navigateToRegistration = () =>
+        this.props.navigator.push({
+            screen: 'App.RegistrationScreen',
+            title: 'Registration',
+            animationType: 'slide-horizontal',
+        })
 
-    submitHandle = () => alert('form submitted !')
+    navigateToHome = () =>
+        this.props.navigator.push({
+            screen: 'App.HomeScreen',
+            title: 'Home',
+            animationType: 'slide-horizontal',
+        })
 
     render() {
         return (
             <LoginWrapper background="#eee">
                 <Title h2>Form</Title>
-                <LoginForm handleSubmit={this.submitHandle}/>
+                <LoginForm navigate={this.navigateToHome.bind(this)} />
                 <FooterContainer>
                     <FooterButton
                         title="Registration"
@@ -42,10 +49,10 @@ class LoginScreen extends Component {
 }
 
 const mapStateToProps = state => {
-   // console.log(state);
-   return {
-       form: state.form,
-   }
+    // console.log(state);
+    return {
+        form: state.form,
+    }
 }
 
 export default connect(mapStateToProps, null)(LoginScreen);
