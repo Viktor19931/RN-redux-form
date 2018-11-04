@@ -2,7 +2,7 @@ import { Navigation } from 'react-native-navigation';
 import { Provider } from 'react-redux';
 
 import LoginScreen from './src/screens/Auth/LoginScreen/LoginScreen'
-import ForgotPasswordScreen from './src/screens/Auth/ForgotPassswordScreen/ForgotPassword'
+import ForgotPasswordScreen from './src/screens/Auth/ForgotPassswordScreen/ForgotPasswordScreen'
 import RegistrationScreen from './src/screens/Auth/RegistrationScreen/RegistrationScreen'
 
 import configureStore from './src/store/configureStore';

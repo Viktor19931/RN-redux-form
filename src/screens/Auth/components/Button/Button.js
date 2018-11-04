@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity, ActivityIndicator } from "react-native";
 import { ButtonWrapper, ButtonText } from './Button.styles'
-import When from "../../../../../components/When/When";
+import When from "../../../../components/When/When";
 
 export class Button extends React.Component {
     shouldComponentUpdate(nextProps, nextState) {

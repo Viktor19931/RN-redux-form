@@ -1,14 +1,47 @@
 import React, {Component} from 'react';
-import {Container, Text} from "../../styles";
+import {Container} from "../../styles";
+import {decreaseCounter, increaseCounter} from "../../actions";
+import {connect} from "react-redux";
+import {View, Text} from "react-native";
+import {ButtonsWrapper, CounterBtn, CounterText} from "./HomeScreen.styles";
 
 class HomeScreen extends Component {
     render() {
         return (
             <Container background="#eee">
-                <Text> Wellcome to home page !!</Text>
+                <View style={{padding: 20}}>
+                    <CounterText h3>{this.props.counter}</CounterText>
+                </View>
+                <ButtonsWrapper>
+                    <CounterBtn
+                        title="Increment"
+                        onPress={this.props.onIncrement}
+                        bg="lightblue"
+                        style={{marginBottom: 20}}
+                    />
+                    <CounterBtn
+                        title="Decrement"
+                        onPress={this.props.onDecrement}
+                        bg="lightblue"
+                    />
+                </ButtonsWrapper>
             </Container>
         );
     }
 }
 
-export default HomeScreen;
+mapStateToProps = state => {
+    console.log(state);
+   return {
+       counter: state.counter.value
+   }
+}
+
+mapDispatchToProps = dispatch => {
+    return {
+        onDecrement: () => dispatch(decreaseCounter()),
+        onIncrement: () => dispatch(increaseCounter())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

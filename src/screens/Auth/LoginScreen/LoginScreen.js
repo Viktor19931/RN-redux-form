@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {LoginWrapper, Title} from "./Login.style";
+import {LoginWrapper, Title} from "./Login.styles";
 import LoginForm from "./components/LoginForm/LoginForm";
 import {FooterContainer} from "./components/LoginForm/Loginform.styles";
 import FooterButton from "./components/FooterButton/FooterButton";

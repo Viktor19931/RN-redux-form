@@ -10,6 +10,8 @@ export const required = value => value ? undefined : 'Required';
 
 export const minLength6 = minLength(6)
 
+export const minLength4 = minLength(4)
+
 export const isValidEmail = value =>
     value && !emailPattert.test(value) ? 'Invalid email address' : undefined;
 

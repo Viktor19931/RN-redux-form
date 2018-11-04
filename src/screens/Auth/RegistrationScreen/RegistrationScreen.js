@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {Container} from "../../../styles/Container";
+import {RegisterWrapper} from "./Registration.styles";
+import RegistrationForm from "./RegistrationForm/RegistrationForm";
 
 class RegistrationScreen extends Component {
+
+    navigateToHome = () =>
+        this.props.navigator.push({
+            screen: 'App.HomeScreen',
+            title: 'Home',
+            animationType: 'slide-horizontal',
+        })
+
     render() {
         return (
-            <View style={styles.container}>
-                <Container background="#eee">
-                    <Text>RegistrationScreen created !</Text>
-                </Container>
-            </View>
+            <RegisterWrapper background="#eee">
+                <RegistrationForm navigate={this.navigateToHome.bind(this)}/>
+            </RegisterWrapper>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-});
 
 export default RegistrationScreen;

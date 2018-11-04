@@ -1,56 +1,18 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
-import {ErrorContainer, ErrorRow, FormControl, TextInput} from "./Loginform.styles";
-import {Text} from "../../../../../styles/index";
-import {FormContainer} from "../../Login.style";
+import {ErrorContainer, ErrorRow} from "./Loginform.styles";
+import {FormContainer} from "../../Login.styles";
 import When from "../../../../../components/When/When";
-import {Row} from "../../../../../components/Grid/Row";
-import {Button} from "../Button/Button";
+import {Button} from "../../../components/Button/Button";
 import {isValidEmail, isYahooMail, minLength6, required} from '../../../../../utility/form/validation'
 import submit from "./submit";
-import {reset} from 'redux-form';
-
-const renderField = ({
-                         label,
-                         keyboardType,
-                         password,
-                         meta: {touched, valid, error, warning},
-                         input: {onChange, ...restInput}
-                     }) => {
-    return (
-        <FormControl>
-            <Row>
-                <Text h4 bold width={80}>{label}</Text>
-                <TextInput
-                    keyboardType={keyboardType}
-                    secureTextEntry={password}
-                    underlineColorAndroid="transparent"
-                    autoCapitalize="none"
-                    onChangeText={onChange}
-                    error={touched && error}
-                    warning={touched && warning}
-                    {...restInput}
-                />
-            </Row>
-            <ErrorContainer>
-                <When is={touched}>
-                    <When is={!!error}>
-                        <Text h4 style={{color: 'red'}}>{error}</Text>
-                    </When>
-                    <When is={!!warning}>
-                        <Text h4 style={{color: 'orange'}}>{warning}</Text>
-                    </When>
-                </When>
-            </ErrorContainer>
-        </FormControl>);
-};
+import renderField from "../../../components/RenderField/renderField";
 
 class LoginComponent extends Component {
-
     render() {
-        const {navigate, handleSubmit, error, valid, submitting, asyncValidating } = this.props
+        const {navigate, handleSubmit, error, valid, submitting, asyncValidating, reset } = this.props
 
-        console.log(this.props);
+        // console.log(this.props);
 
         return (
             <FormContainer>
@@ -78,7 +40,7 @@ class LoginComponent extends Component {
                 <Button
                     title="Login"
                     bg="steelblue"
-                    onPress={handleSubmit(values => submit(values, navigate))}
+                    onPress={handleSubmit(values => submit(values, navigate, reset))}
                     showIndicator={submitting}
                     asyncValidation={!!asyncValidating}
                     disabled={!valid || submitting}

@@ -1,5 +1,4 @@
-import { SubmissionError } from 'redux-form'
-
+import {SubmissionError} from "redux-form";
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -24,6 +23,3 @@ const submit = (values, navigateToHome, reset) => {
         }
     })
 }
-
-
-export default submit
